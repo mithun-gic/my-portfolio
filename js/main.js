@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", function () {
+    var typed = new Typed('#text', {
+        strings: ["Web Developer", "UI/UX Designer", "Frontend Developer"],
+        typeSpeed: 100,
+        backSpeed: 100,
+        backDelay: 1000,
+        loop: true
+    });
+});
+
+
 /*===== MENU SHOW =====*/ 
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
@@ -11,23 +22,11 @@ const showMenu = (toggleId, navId) =>{
 }
 showMenu('nav-toggle','nav-menu')
 
-// auto type textt efacts
-
-var typed = new Typed('#text', {
-      strings: ["Web Developer", "UI/UX Designer", "Frontend Developer"],
-      typeSpeed: 100,
-      backSpeed: 100,
-      backDelay: 100,
-      loop: true
-    });
-
-
 /*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll('.nav__link')
+const navLink = document.querySelectorAll('.nav_link')
 
 function linkAction(){
     const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
@@ -38,7 +37,7 @@ const sections = document.querySelectorAll('section[id]')
 const scrollActive = () =>{
     const scrollDown = window.scrollY
 
-  sections.forEach(current =>{
+    sections.forEach(current =>{
         const sectionHeight = current.offsetHeight,
               sectionTop = current.offsetTop - 58,
               sectionId = current.getAttribute('id'),
@@ -59,10 +58,9 @@ const sr = ScrollReveal({
     distance: '60px',
     duration: 2000,
     delay: 200,
-//     reset: true
 });
 
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
